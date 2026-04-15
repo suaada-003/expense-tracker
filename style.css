@@ -1,0 +1,129 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+
+  color: white;
+  height: 100vh;
+}
+
+/* HERO SECTION */
+.hero {
+background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: white;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+/* TITLE */
+.hero h1 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  background: linear-gradient(90deg, #22c55e, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* TEXT */
+.hero p {
+  font-size: 18px;
+  max-width: 500px;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+
+/* BUTTON */
+.hero button {
+  margin-top: 25px;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+
+  background: linear-gradient(90deg, #22c55e, #06b6d4);
+  color: white;
+
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* BUTTON HOVER EFFECT */
+.hero button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 25px rgba(0,0,0,0.4);
+}
+
+/* BUTTON CLICK EFFECT */
+.hero button:active {
+  transform: scale(0.98);
+}
+
+
+/* APP SECTION */
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 50px 20px;
+}
+
+/* CARD STYLE */
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  width: 90%;
+  max-width: 400px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* INPUTS */
+input, select {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+}
+
+/* BUTTON */
+.card button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: #22c55e;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.card button:hover {
+  background: #16a34a;
+}
+
+/* LIST */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  padding: 8px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}

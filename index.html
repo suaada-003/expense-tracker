@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Expense Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <h1>💸 Smart Expense Tracker</h1>
+    <p>Track your spending, manage your budget, and build better money habits.</p>
+
+    <button onclick="startApp()">Get Started</button>
+  </section>
+  <section class="app">
+
+  <div class="card">
+
+    <h2>Add Expense</h2>
+
+    <input type="number" id="amount" placeholder="Enter amount">
+
+    <select id="category">
+      <option value="food">Food</option>
+      <option value="transport">Transport</option>
+      <option value="rent">Rent</option>
+      <option value="other">Other</option>
+    </select>
+
+    <button onclick="addExpense()">Add Expense</button>
+
+  </div>
+
+  <div class="card">
+    <h2>Total Spent: <span id="total">0</span></h2>
+    <p id="insight"></p>
+  </div>
+
+  <div class="card">
+    <h2>Expenses</h2>
+    <ul id="list"></ul>
+  </div>
+
+</section>
+
+  <script src="app.js"></script>
+</body>
+</html>
