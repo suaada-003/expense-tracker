@@ -13,7 +13,7 @@ body {
 
 /* HERO SECTION */
 .hero {
-background: linear-gradient(135deg, green );
+background: linear-gradient(135deg, beige );
   color: white;
   height: 100vh;
   display: flex;
@@ -73,6 +73,7 @@ background: linear-gradient(135deg, green );
 
 /* APP SECTION */
 .app {
+    background-color:;
   display: flex;
   flex-direction: column;
   align-items: center;
