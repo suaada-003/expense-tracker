@@ -13,7 +13,7 @@ body {
 
 /* HERO SECTION */
 .hero {
-background: linear-gradient(135deg, );
+background: linear-gradient(135deg, green );
   color: white;
   height: 100vh;
   display: flex;
