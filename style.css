@@ -32,6 +32,8 @@ background: linear-gradient(135deg, white );
   background: linear-gradient(90deg, #22c55e, #06b6d4);
 padding: 40px;
 border-radius: 60px;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
   
 }
 
