@@ -14,10 +14,20 @@ body {
 }
 
 body {
-
-
-  height: 100vh;
+height: 100vh;
 }
+
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+}
+
+
 
 /* HERO SECTION */
 .hero {
