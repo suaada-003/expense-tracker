@@ -114,3 +114,13 @@ function loadExpenses() {
 
 // run when page loads
 loadExpenses();
+
+function deleteExpense(index) {
+  expenses.splice(index, 1);
+
+  // update storage
+  localStorage.setItem("expenses", JSON.stringify(expenses));
+
+  updateUI();
+  updateChart();
+}
