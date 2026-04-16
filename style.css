@@ -15,7 +15,7 @@ body {
 .hero {
 background: linear-gradient(135deg, white );
   color: white;
-  height: 100vh;
+  height: 50vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -73,7 +73,7 @@ background: linear-gradient(135deg, white );
 
 /* APP SECTION */
 .app {
-    background-color: beige;
+    background-color: rgba(245, 245, 220, 0.658);
   display: flex;
   flex-direction: column;
   align-items: center;

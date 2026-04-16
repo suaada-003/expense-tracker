@@ -1,6 +1,4 @@
-function startApp() {
-  alert("Let’s start building your expense tracker 💸");
-}
+
 
 let expenses = [];
 let chart;
@@ -15,6 +13,9 @@ function addExpense() {
     amount: Number(amount),
     category: category
   });
+
+  // ✅ SAVE TO STORAGE
+  localStorage.setItem("expenses", JSON.stringify(expenses));
 
   document.getElementById("amount").value = "";
 
@@ -95,3 +96,16 @@ function updateChart() {
     }
   });
 }
+
+function loadExpenses() {
+  let saved = localStorage.getItem("expenses");
+
+  if (saved) {
+    expenses = JSON.parse(saved);
+    updateUI();
+    updateChart();
+  }
+}
+
+// run when page loads
+loadExpenses();
