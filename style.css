@@ -1,3 +1,4 @@
+/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -5,42 +6,17 @@
   font-family: "Segoe UI", sans-serif;
 }
 
-* {
-  box-sizing: border-box;
-}
-
-body {
+html, body {
+  width: 100%;
   overflow-x: hidden;
+  background: #f5f5f5;
 }
 
-body {
-height: 100vh;
-}
-
-
-.form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  width: 100%;
-  max-width: 400px;
-  margin: auto;
-}
-
-input, select, button {
-  width: 100%;
-  max-width: 100%;
-}
-
-li {
-  word-break: break-word;
-}
-
-/* HERO SECTION */
+/* HERO */
 .hero {
-background: linear-gradient(135deg, white );
+  background: linear-gradient(135deg, #0f172a, #1e293b);
   color: white;
-  height: 50vh;
+  min-height: 50vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -49,112 +25,65 @@ background: linear-gradient(135deg, white );
   padding: 20px;
 }
 
-/* TITLE */
 .hero h1 {
-  font-size: 48px;
-  font-weight: 700;
-  margin-bottom: 15px;
+  font-size: 40px;
+  margin-bottom: 10px;
+
   background: linear-gradient(90deg, #22c55e, #06b6d4);
-padding: 40px;
-border-radius: 60px;
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-  
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-/* TEXT */
 .hero p {
-  font-size: 18px;
-  max-width: 500px;
+  font-size: 16px;
   color: #cbd5e1;
-  line-height: 1.6;
+  max-width: 500px;
 }
 
-/* BUTTON */
 .hero button {
-  margin-top: 25px;
-  padding: 14px 28px;
+  margin-top: 20px;
+  padding: 12px 24px;
   border: none;
-  border-radius: 12px;
-  font-size: 16px;
-  font-weight: 600;
+  border-radius: 10px;
   cursor: pointer;
-
   background: linear-gradient(90deg, #22c55e, #06b6d4);
   color: white;
-
-  transition: all 0.3s ease;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  font-weight: bold;
 }
 
-/* BUTTON HOVER EFFECT */
-.hero button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 15px 25px rgba(0,0,0,0.4);
-}
-
-/* BUTTON CLICK EFFECT */
-.hero button:active {
-  transform: scale(0.98);
-}
-
-
-/* APP SECTION */
+/* APP */
 .app {
-    background-color: rgba(245, 245, 220, 0.658);
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  padding: 50px 20px;
+  padding: 30px 15px;
 }
 
-/* CARD STYLE */
-.card {
-  background: rgba(255, 255, 255, 0.05);
+/* CARDS */
+.form, .card {
+  background: white;
+  width: 100%;
+  max-width: 420px;
   padding: 20px;
-  width: 90%;
-  max-width: 400px;
   border-radius: 15px;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
 /* INPUTS */
-input, select {
+input, select, button {
   width: 100%;
   padding: 12px;
-  margin: 8px 0;
+  margin-top: 10px;
   border-radius: 8px;
-  border: none;
-  outline: none;
-}
-
-/* BUTTON */
-.card button {
-  width: 100%;
-  padding: 12px;
-  border: none;
-  border-radius: 10px;
-  background: #22c55e;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.card button:hover {
-  background: #16a34a;
+  border: 1px solid #ddd;
+  font-size: 16px;
 }
 
 /* LIST */
 ul {
   list-style: none;
-  padding: 0;
-}
-
-li {
-  padding: 8px;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
+  margin-top: 10px;
 }
 
 li {
@@ -162,19 +91,35 @@ li {
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
+  border-bottom: 1px solid #eee;
+  word-break: break-word;
 }
 
 li button {
   background: red;
-  border: none;
   color: white;
+  border: none;
   padding: 5px 8px;
   border-radius: 5px;
   cursor: pointer;
 }
 
-li button:hover {
-  background: darkred;
-}
+/* MOBILE */
+@media (max-width: 768px) {
 
+  .hero h1 {
+    font-size: 26px;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+
+  .form, .card {
+    width: 95%;
+  }
+
+  input, select, button {
+    font-size: 15px;
+  }
+}
