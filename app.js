@@ -38,7 +38,7 @@ function updateUI() {
     let li = document.createElement("li");
     li.innerHTML = `
       ${exp.category} - KES ${exp.amount} (${exp.date})
-      <button onclick="deleteExpense(${exp.id})">❌</button>
+      <button onclick="deleteExpense(${exp.id})">Delete</button>
     `;
 
     list.appendChild(li);
