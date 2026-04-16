@@ -1,42 +1,44 @@
-
-
 let expenses = [];
 let chart;
 
+// ➕ ADD EXPENSE
 function addExpense() {
   let amount = document.getElementById("amount").value;
   let category = document.getElementById("category").value;
+  let date = document.getElementById("date").value;
 
-  if (!amount) return;
+  if (!amount || !date) return;
 
   expenses.push({
+    id: Date.now(),
     amount: Number(amount),
-    category: category
+    category: category,
+    date: date // ✅ from calendar
   });
 
-  // ✅ SAVE TO STORAGE
   localStorage.setItem("expenses", JSON.stringify(expenses));
 
   document.getElementById("amount").value = "";
+  document.getElementById("date").value = "";
 
   updateUI();
   updateChart();
 }
 
+// 📊 UPDATE UI (ALL EXPENSES)
 function updateUI() {
   let total = 0;
   let list = document.getElementById("list");
 
   list.innerHTML = "";
 
-  expenses.forEach((exp, index) => {
+  expenses.forEach((exp) => {
     total += exp.amount;
 
     let li = document.createElement("li");
-
     li.innerHTML = `
-      ${exp.category} - KES ${exp.amount}
-      <button onclick="deleteExpense(${index})">DELETE</button>
+      ${exp.category} - KES ${exp.amount} (${exp.date})
+      <button onclick="deleteExpense(${exp.id})">❌</button>
     `;
 
     list.appendChild(li);
@@ -47,13 +49,7 @@ function updateUI() {
   showInsight(total);
 }
 
-
-expenses.push({
-  amount: Number(amount),
-  category: category,
-  date: new Date()
-});
-
+// 🧠 INSIGHTS
 function showInsight(total) {
   let msg = "";
 
@@ -68,6 +64,17 @@ function showInsight(total) {
   document.getElementById("insight").textContent = msg;
 }
 
+// 🗑 DELETE
+function deleteExpense(id) {
+  expenses = expenses.filter(exp => exp.id !== id);
+
+  localStorage.setItem("expenses", JSON.stringify(expenses));
+
+  updateUI();
+  updateChart();
+}
+
+// 📈 PIE CHART (ALL DATA)
 function updateChart() {
   let categories = {};
 
@@ -83,7 +90,7 @@ function updateChart() {
 
   let ctx = document.getElementById("pieChart");
 
-  if (!ctx) return; // safety check
+  if (!ctx) return;
 
   if (chart) {
     chart.destroy();
@@ -109,25 +116,23 @@ function updateChart() {
   });
 }
 
+// 💾 LOAD DATA
 function loadExpenses() {
   let saved = localStorage.getItem("expenses");
 
   if (saved) {
     expenses = JSON.parse(saved);
+
+    // ✅ Fix old data (no date)
+    expenses = expenses.map(exp => ({
+      ...exp,
+      date: exp.date || new Date().toISOString().split("T")[0]
+    }));
+
     updateUI();
     updateChart();
   }
 }
 
-// run when page loads
+// 🚀 START APP
 loadExpenses();
-
-function deleteExpense(index) {
-  expenses.splice(index, 1);
-
-  // update storage
-  localStorage.setItem("expenses", JSON.stringify(expenses));
-
-  updateUI();
-  updateChart();
-}
