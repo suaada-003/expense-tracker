@@ -53,9 +53,9 @@ function updateUI() {
 function showInsight(total) {
   let msg = "";
 
-  if (total > 5000) {
+  if (total > 50000) {
     msg = "⚠️ You are overspending!";
-  } else if (total > 2000) {
+  } else if (total > 30000) {
     msg = "💡 Be careful with spending.";
   } else {
     msg = "✅ Good control!";
