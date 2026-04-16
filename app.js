@@ -36,7 +36,7 @@ function updateUI() {
 
     li.innerHTML = `
       ${exp.category} - KES ${exp.amount}
-      <button onclick="deleteExpense(${index})">❌</button>
+      <button onclick="deleteExpense(${index})">DELETE</button>
     `;
 
     list.appendChild(li);
