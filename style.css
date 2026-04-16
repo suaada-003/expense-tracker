@@ -30,8 +30,9 @@ background: linear-gradient(135deg, white );
   font-weight: 700;
   margin-bottom: 15px;
   background: linear-gradient(90deg, #22c55e, #06b6d4);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+padding: 40px;
+border-radius: 60px;
+  
 }
 
 /* TEXT */
