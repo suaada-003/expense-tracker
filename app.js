@@ -47,6 +47,13 @@ function updateUI() {
   showInsight(total);
 }
 
+
+expenses.push({
+  amount: Number(amount),
+  category: category,
+  date: new Date()
+});
+
 function showInsight(total) {
   let msg = "";
 
