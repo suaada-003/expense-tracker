@@ -29,11 +29,16 @@ function updateUI() {
 
   list.innerHTML = "";
 
-  expenses.forEach(exp => {
+  expenses.forEach((exp, index) => {
     total += exp.amount;
 
     let li = document.createElement("li");
-    li.textContent = `${exp.category} - KES ${exp.amount}`;
+
+    li.innerHTML = `
+      ${exp.category} - KES ${exp.amount}
+      <button onclick="deleteExpense(${index})">❌</button>
+    `;
+
     list.appendChild(li);
   });
 
