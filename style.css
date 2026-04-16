@@ -27,7 +27,14 @@ height: 100vh;
   margin: auto;
 }
 
+input, select, button {
+  width: 100%;
+  max-width: 100%;
+}
 
+li {
+  word-break: break-word;
+}
 
 /* HERO SECTION */
 .hero {
