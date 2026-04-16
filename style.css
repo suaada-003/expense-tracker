@@ -5,6 +5,14 @@
   font-family: "Segoe UI", sans-serif;
 }
 
+* {
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}
+
 body {
 
 
@@ -152,3 +160,4 @@ li button {
 li button:hover {
   background: darkred;
 }
+
